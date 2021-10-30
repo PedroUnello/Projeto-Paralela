@@ -1,31 +1,39 @@
 #include <stdio.h>
-#include <time.h>
+#include <time.h>    
 #include <omp.h>
 
-#define BILLION 1000000000.0
+#define BILLION  1000000000.0
 
 void tartaruga(int inicio, int fim, double *soma);
 
-int main()
+int main(int argc, char * argv[])
 {
   // Inicio do clock
   struct timespec start, end;
   clock_gettime(CLOCK_REALTIME, &start);
 
-  // start code
-  printf("teste de codigo");
-  for (int i = 0; i < 10000; i++)
-  {
-    printf("");
-  }
-  // end code
 
-  //Fim do clock
-  clock_gettime(CLOCK_REALTIME, &end);
-  double time_spent = (end.tv_sec - start.tv_sec) +
-                      (end.tv_nsec - start.tv_nsec) / BILLION;
-  printf("\n\nTempo de execução %f ", time_spent);
-  return 0;
+  
+    // *****************************************************
+    //                    INICIALIZAÇÃO
+    // *****************************************************
+    double soma;
+    int inicio, fim;
+    int thread_count;
+
+    thread_count = strtol(argv[1], NULL, 10);
+    # pragma omp parallel num_threads(thread_count)
+    tartaruga(inicio,fim,&soma);
+
+    // ******************************************************
+    
+
+    //Fim do clock
+    clock_gettime(CLOCK_REALTIME, &end);
+    double time_spent = (end.tv_sec - start.tv_sec) +
+                        (end.tv_nsec - start.tv_nsec) / BILLION;
+    printf("\n\nTempo de execução %f ", time_spent);
+    return 0;
 }
 
 void tartaruga(int inicio, int fim, double *soma)

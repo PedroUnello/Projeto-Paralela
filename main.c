@@ -29,12 +29,12 @@ int main(int argc, char *argv[])
 
 #pragma omp parallel sections 
 { 
-        #pragma omp section nowait  
+        #pragma omp for nowait
         { 
                 tartaruga(inicio, devide, &soma);
         } 
          
-        #pragma omp section nowait 
+        #pragma omp for nowait 
         { 
                 tartaruga(devide+1, fim, &soma);
         } 

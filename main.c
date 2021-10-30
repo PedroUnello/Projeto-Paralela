@@ -23,7 +23,6 @@ int main(int argc, char * argv[])
     # pragma omp parallel num_threads(thread_count)
     tartaruga(soma,inicio,fim);
 
-    return 0;
     // ******************************************************
     
 

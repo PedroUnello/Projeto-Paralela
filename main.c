@@ -5,7 +5,8 @@
 
 #define BILLION 1000000000.0
 
-void tartaruga(int inicio, int fim, double *soma);
+
+void tartaruga(int contador, int fim, double *soma);
 
 int main(int argc, char *argv[])
 {
@@ -17,12 +18,27 @@ int main(int argc, char *argv[])
   //                    INICIALIZAÇÃO
   // *****************************************************
   double soma = 0;
+  int fios = 2;
   int inicio = 1, fim = 1000000000;
+  int devide = fios/fim; 
+
   int thread_count;
 
-  thread_count = strtol(argv[1], NULL, 10);
-#pragma omp parallel num_threads(thread_count)
-  tartaruga(inicio, fim, &soma);
+// thread_count = strtol(argv[1], NULL, 10);
+//#pragma omp parallel num_threads(thread_count)
+
+#pragma omp parallel sections 
+{ 
+        #pragma omp section 
+        { 
+                tartaruga(inicio, devide, &soma);
+        } 
+         
+        #pragma omp section 
+        { 
+                tartaruga(devide, fim, &soma);
+        } 
+}
 
   // ******************************************************
 
@@ -36,29 +52,23 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-void tartaruga(int inicio, int fim, double *soma)
+void tartaruga(int contador, int fim, double *soma)
 {
   double resultado;
-  int contador = inicio;
 
   int idThread = omp_get_thread_num();
   int qtdThreads = omp_get_num_threads();
 
   while (contador <= fim)
   {
-    if (contador % qtdThreads == idThread)
-    {
-      resultado = 1 / (double)contador;
-
-      /*
-      printf("ID: %d | QTD: %d\n",idThread,qtdThreads);
-      printf("R: %.14e | C: %d\n",resultado,contador);
-      */
+    resultado = 1 /(double)contador;
+    /*
+    printf("ID: %d | QTD: %d\n",idThread,qtdThreads);
+    printf("R: %.14e | C: %d\n",resultado,*contador);
+    */
+    contador++;
 
 #pragma omp critical
-      *soma += resultado;
-    }
-
-    contador++;
+    *soma += resultado;
   }
 }

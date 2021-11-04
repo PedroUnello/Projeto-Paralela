@@ -5,7 +5,7 @@
 
 #define BILLION 1000000000.0
 
-double tartaruga(int fim);
+double tartaruga(unsigned long long fim);
 
 int main(int argc, char *argv[])
 {
@@ -17,7 +17,8 @@ int main(int argc, char *argv[])
   //                    INICIALIZAÇÃO
   // *****************************************************
   double soma = 0;
-  int inicio = 1, fim = 1000000000;
+  int inicio = 1;
+  unsigned long long fim =  1000000000000;
   int thread_count;
 
   thread_count = strtol(argv[1], NULL, 10);
@@ -36,19 +37,17 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-double tartaruga(int fim)
+double tartaruga(unsigned long long fim)
 {
-
-
   int idThread = omp_get_thread_num();
   int qtdThreads = omp_get_num_threads();
   double meuCont = 0;
-  double contador = 1 + idThread * (fim/qtdThreads);
-  int final = (idThread+1) * (fim/qtdThreads);
+  unsigned long long contador = 1 + idThread * (fim/qtdThreads);
+  unsigned long long final = (idThread+1) * (fim/qtdThreads);
   while (contador <= final)
   {      
-      //printf("ID: %d | C: %d\n",idThread, contador);   
-    meuCont += 1/contador;
+    double numerador = 1.0;
+    meuCont += numerador / contador;
     contador++;
   }
   return meuCont;

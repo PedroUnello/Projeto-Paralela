@@ -29,7 +29,7 @@ int main(){
     int client_tam = sizeof(client);
     client_id = accept(server, (struct sockaddr*)&client, &client_tam);
 
-    printf("Client connected at IP: %s and port: %i\n", inet_ntoa(client.sin_addr), ntohs(client.sin_port));
+    printf("Conexao no socket: %s:%i\n", inet_ntoa(client.sin_addr), ntohs(client.sin_port));
     
     long double initialize[2];
     long double somaFaixa;

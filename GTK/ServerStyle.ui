@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object id="window" class="GtkWindow">
+    <property name="title">Servidor - Tartaruga</property>
+    <property name="default-height">350</property>
+    <property name="default-width">400</property>
+    <property name="resizable">FALSE</property>
+    <child>
+
+    <!-- Conexões  -->
+      <object id="Grid" class="GtkGrid">
+        <property name="column-spacing">50</property>
+        <property name="row-spacing">5</property>
+        <property name="halign">GTK_ALIGN_START</property>
+        <property name="valign">GTK_ALIGN_START</property>
+        <property name="column-homogeneous">TRUE</property>
+        <property name="row-homogeneous">FALSE</property>
+        <!-- novos  -->
+        <child>
+          <object id="Opcoes" class="GtkBox">
+            <layout>
+              <property name="column">2</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object id="Soma" class="GtkStatusbar">
+            <layout>
+              <property name="column">2</property>
+              <property name="row">5</property>
+            </layout>
+          </object>
+        </child>
+        <!-- novos  -->
+
+      </object>
+    <!--  Conexões  -->
+
+    </child>
+  </object>
+</interface>

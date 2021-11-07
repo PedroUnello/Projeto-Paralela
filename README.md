@@ -19,7 +19,7 @@
   * Os arquivos OneClientTurtle.c e OneServerTurtle.c são parte de uma tentativa de possibilitar a execução da tartaruga em múltiplas máquinas ao mesmo tempo.
   </l1>
   
-  <br><li> Estrutura de Rede (computação distribuida)
+  <br><li> Estrutura de Rede (computação distribuida) -> ClientTurtle.c e ServerTurtle.c
   
   ```
   gcc {nome do arquivo} -o {nome do executavel} -fopenmp -lpthread -lm
@@ -32,7 +32,7 @@
     
   </li>
   
-  <br><li> Interface 
+  <br><li> Interface -> Pasta GTK (e seus conteúdos)
   
   ```
   gcc $( pkg-config --cflags gtk4 ) -o {nome do executavel} {nome do arquivo} $( pkg-config --libs gtk4 ) -fopenmp -lpthread -lm

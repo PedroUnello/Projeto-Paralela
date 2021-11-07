@@ -36,7 +36,7 @@ void Exec(int threads, char * ip) //ip + nº threads
   conn.sin_port = htons(3490); //https://stackoverflow.com/questions/19207745/htons-function-in-socket-programing
   int status = connect(server, (struct sockaddr*)&conn, sizeof(conn));
   printf("\nConnected = %d", status);
-  if (status < 0) { break; } //Caso não conecte, simplesmente termina a execução
+  if (status < 0) { shutdown(server, SHUT_RDWR); return; } //Caso não conecte, simplesmente termina a execução
 
   unsigned long long receive[2]; //Estrutura para o recebimento
   double encodeMsg;

@@ -1,24 +1,26 @@
 window {
-    background-color:aquamarine;
+    background-color:#797979;
 }
 
 button * {
-    color: black;
-    outline-color: black;
-    border-color: black;
+    color: #5DA19D;
+    outline-color: #EDCBB9;
+    border-color: #EDCBB9;
     font-style:italic;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: large;
 }
 
+
+
 box {
-    background-color: whitesmoke;
-    border-color: grey;
+    background-color: #FFEBE0;
+    border-color: #EDCBB9;
     border-style: solid;
     border-width: 2px;
     color: black;
 }
 
 statusbar{
-    background-color: whitesmoke;
+    background-color: #FFEBE0;
 }

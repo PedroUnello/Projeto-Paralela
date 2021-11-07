@@ -1,0 +1,17 @@
+window {
+    background-color:aquamarine;
+}
+
+statusbar{
+    background-color: whitesmoke;
+    border-color:grey;
+    border-width: 2px;
+    border-style: solid;
+}
+
+button * {
+    color: black;
+    font-style:italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+}

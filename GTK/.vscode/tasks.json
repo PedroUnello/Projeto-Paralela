@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc-10 arquivo de build ativo",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "$$( pkg-config --cflags gtk4 )", 
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "${file}",    
+                "$$( pkg-config --libs gtk4 )"
+
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarefa gerada pelo Depurador."
+        }
+    ],
+    "version": "2.0.0"
+}

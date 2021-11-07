@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object id="window" class="GtkWindow">
+    <property name="title">Tartaruga</property>
+    <property name="default-height">350</property>
+    <property name="default-width">800</property>
+    <property name="resizable">FALSE</property>
+    <child>
+
+      <object id="grid" class="GtkGrid">
+        <property name="column-spacing">0</property>
+        <property name="row-spacing">0</property>
+        <property name="halign">GTK_ALIGN_CENTER</property>
+        <property name="valign">GTK_ALIGN_CENTER</property>
+        <property name="column-homogeneous">TRUE</property>
+
+        <!-- ###################### CONEXÃO ####################### -->
+        <child>
+          <object id="Ip" class="GtkEntry">
+            <property name="placeholder-text">IP: ex.10.0.0.1</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object id="SetIP" class="GtkButton">
+            <property name="label">Confimar IP</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object id="Thread" class="GtkEntry">
+            <property name="placeholder-text">Threads: ex. 10</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object id="SetThread" class="GtkButton">
+            <property name="label">Confimar nº Threads</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <!-- ###################### CONEXÃO ####################### -->
+
+        <!-- ###################### BOTÃO ######################### -->
+        <child>
+          <object id="Conectar" class="GtkButton">
+            <property name="label">Conectar</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="row">8</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object id="Desconectar" class="GtkButton">
+            <property name="label">Desconectar</property>
+            <layout>
+              <property name="column">1</property>
+              <property name="row">8</property>
+            </layout>
+          </object>
+        </child>
+
+        <child>
+          <object id="Quit" class="GtkButton">
+            <property name="label">Quit</property>
+            <layout>
+              <property name="column">2</property>
+              <property name="row">8</property>
+            </layout>
+          </object>
+        </child>
+        <!-- ###################### BOTÃO ######################### -->
+        
+        <!-- ###################### STATUS ######################## -->
+        <child>
+          <object id="Status" class="GtkBox">
+            <layout>
+              <property name="column">1</property>
+              <property name="row">12</property>
+              <property name="column-span">2</property>
+            </layout>
+          </object>
+        </child>
+        <!-- ###################### STATUS ######################## -->
+
+      </object>
+
+    </child>
+  </object>
+</interface>

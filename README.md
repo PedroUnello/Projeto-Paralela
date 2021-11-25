@@ -48,3 +48,9 @@
   </li>
   
 </ol>
+
+## Resultado:
+
+Resultado obtido após 30 minutos utilizando a estrutura de rede sem a interface GTK.
+
+![image](https://user-images.githubusercontent.com/66622436/143435133-4c0653f7-18c3-44cf-abbd-f1bf6be7a45e.png)
